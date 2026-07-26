@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Sisters' Couch — Back Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#2C4A3E;
+    --forest-deep:#1E332A;
+    --terracotta:#C4622D;
+    --blush:#E8C4B8;
+    --cream:#FAF6F1;
+    --sage:#E8EDE9;
+    --ink:#2A2521;
+    --line: rgba(42,37,33,0.12);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--forest-deep);
+  }
+  a{color:var(--terracotta);}
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--forest);color:#fff;padding:10px 16px;z-index:200;}
+  .skip-link:focus{left:12px;top:12px;}
+
+  /* ---------- Header ---------- */
+  header.hero{
+    padding:64px 32px 48px;
+    background:
+      radial-gradient(1100px 420px at 82% -120px, rgba(196,98,45,0.16), transparent 60%),
+      var(--forest);
+    color:var(--cream);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero .cushion-seam{
+    position:absolute; inset:0; pointer-events:none; opacity:0.15;
+  }
+  header.hero .eyebrow{
+    font-family:'Jost',sans-serif; text-transform:uppercase; letter-spacing:.22em;
+    font-size:12px; color:var(--blush); margin-bottom:14px; font-weight:500;
+  }
+  header.hero h1{
+    font-size:clamp(2.2rem, 5vw, 3.4rem); color:#fff; font-style:italic; font-weight:500;
+  }
+  header.hero p.sub{
+    max-width:560px; margin:16px auto 0; color:rgba(250,246,241,0.82); font-size:15px;
+  }
+  header.hero .badge{
+    display:inline-block; margin-top:22px; padding:6px 16px; border:1px solid rgba(250,246,241,0.35);
+    border-radius:999px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--blush);
+  }
+
+  /* ---------- Contact strip ---------- */
+  .contact-strip{
+    background:var(--forest-deep); color:var(--cream);
+    display:flex; flex-wrap:wrap; justify-content:center; gap:0;
+    font-size:13.5px;
+  }
+  .contact-strip a{ color:var(--cream); text-decoration:none; }
+  .contact-strip .item{
+    padding:12px 22px; border-right:1px solid rgba(250,246,241,0.14);
+    display:flex; align-items:center; gap:8px;
+  }
+  .contact-strip .item:last-child{border-right:none;}
+  .contact-strip .item b{color:var(--blush); font-weight:500;}
+
+  /* ---------- Layout: nav + content ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    max-width:1180px;
+    margin:0 auto;
+    gap:0;
+  }
+  nav.rail{
+    position:sticky; top:0; align-self:start;
+    padding:36px 18px 36px 32px;
+    height:100vh; overflow-y:auto;
+  }
+  nav.rail .rail-label{
+    font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--terracotta);
+    font-weight:600; margin-bottom:14px; display:block;
+  }
+  nav.rail ul{ list-style:none; margin:0; padding:0; }
+  nav.rail li{ margin-bottom:2px; }
+  nav.rail a{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none; color:var(--ink); font-size:14.5px; font-weight:500;
+    padding:10px 12px; border-radius:8px 8px 0 8px; transition:background .15s ease, color .15s ease;
+  }
+  nav.rail a .dot{
+    width:8px; height:8px; border-radius:50%; background:var(--sage); border:1px solid var(--line); flex:none;
+  }
+  nav.rail a:hover{ background:var(--sage); }
+  nav.rail a:hover .dot{ background:var(--terracotta); border-color:var(--terracotta); }
+
+  main{ padding:36px 32px 80px 24px; min-width:0; }
+
+  .intro-note{
+    background:#fff; border:1px solid var(--line); border-radius:4px 16px 4px 16px;
+    padding:18px 22px; font-size:14px; color:#4b443d; margin-bottom:36px;
+  }
+  .intro-note b{color:var(--forest-deep);}
+
+  section.program{
+    margin-bottom:44px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:22px 22px 6px 6px; /* cushion silhouette: soft top, firm base */
+    padding:0;
+    overflow:hidden;
+    scroll-margin-top:20px;
+  }
+  section.program .p-head{
+    padding:24px 28px 18px;
+    background:var(--sage);
+    border-bottom:1px solid var(--line);
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  section.program .p-head h2{ font-size:1.7rem; font-style:italic; }
+  section.program .p-head .rate{
+    font-family:'Jost',sans-serif; font-weight:600; color:var(--terracotta); font-size:14.5px;
+    background:#fff; padding:6px 14px; border-radius:999px; border:1px solid var(--line);
+    white-space:nowrap;
+  }
+  section.program .p-body{ padding:24px 28px 28px; }
+
+  .grid2{ display:grid; grid-template-columns:1.1fr 1fr; gap:28px; }
+  @media (max-width:800px){ .grid2{ grid-template-columns:1fr; } }
+
+  .block h3{
+    font-family:'Jost',sans-serif; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--forest-deep); font-weight:600; margin-bottom:10px; opacity:0.75;
+  }
+  .details dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font-size:14.5px; }
+  .details dt{ color:#7a726a; font-weight:500; }
+  .details dd{ margin:0; }
+
+  .linklist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .linklist li a{
+    display:flex; align-items:center; gap:10px; text-decoration:none;
+    font-size:14.5px; color:var(--ink); padding:9px 12px; border:1px solid var(--line);
+    border-radius:8px; transition:border-color .15s ease, background .15s ease;
+  }
+  .linklist li a:hover{ border-color:var(--terracotta); background:#fffaf6; }
+  .linklist li a .arrow{ color:var(--terracotta); font-weight:600; margin-left:auto; }
+  .linklist li a.pending{ color:#9a8f84; border-style:dashed; }
+  .linklist li a.pending .arrow{ color:#b5aca2; }
+  .tag{
+    display:inline-block; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    padding:3px 8px; border-radius:6px; margin-left:8px; font-weight:600;
+  }
+  .tag.live{ background:#e4efe6; color:#2f6b45; }
+  .tag.todo{ background:#f6e6dd; color:var(--terracotta); }
+
+  .note{ font-size:13.5px; color:#6b6259; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); }
+  .contacts-inline{ font-size:14px; margin-top:10px; }
+  .contacts-inline b{ color:var(--forest-deep); }
+
+  footer{
+    text-align:center; padding:36px 20px 60px; font-size:12.5px; color:#948b81;
+  }
+
+  @media (max-width:900px){
+    .shell{ grid-template-columns:1fr; }
+    nav.rail{
+      position:static; height:auto; padding:20px 20px 0; overflow:visible;
+    }
+    nav.rail ul{ display:flex; flex-wrap:wrap; gap:6px; }
+    nav.rail li{ margin:0; }
+    main{ padding:24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="hero">
+  <div class="eyebrow">Internal · Not for public linking</div>
+  <h1>The Back Room</h1>
+  <p class="sub">Every program's links, rates, and terms in one place — built for B and Alandra to move fast between systems without digging through email.</p>
+  <span class="badge">TSC Wellness Hub · Admin Reference</span>
+</header>
+
+<div class="contact-strip">
+  <div class="item"><b>Address</b> 19562 Grand River Ave, Detroit, MI 48223</div>
+  <div class="item"><b>Gmail</b> <a href="mailto:thesisterscouch@gmail.com">thesisterscouch@gmail.com</a></div>
+</div>
+
+<div class="shell">
+  <nav class="rail" aria-label="Program navigation">
+    <span class="rail-label">Programs</span>
+    <ul>
+      <li><a href="#suite"><span class="dot"></span>Wellness Specialist Suite</a></li>
+      <li><a href="#events"><span class="dot"></span>Event Space Rental</a></li>
+      <li><a href="#retail"><span class="dot"></span>Retail Vendor Program</a></li>
+      <li><a href="#coworking"><span class="dot"></span>Drop-In Co-Working</a></li>
+      <li><a href="#collective"><span class="dot"></span>Couch Collective</a></li>
+      <li><a href="#hosted"><span class="dot"></span>TSC-Hosted Events</a></li>
+      <li><a href="#general"><span class="dot"></span>General Tools</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <div class="intro-note">
+      <b>How to use this page:</b> Each section holds the current rate/terms, active links, and who to contact. Links marked <span class="tag todo">Add link</span> mean I don't have a confirmed URL on file — drop it in and it's done. Rebuild anytime you want a section restructured.
+    </div>
+
+    <!-- WELLNESS SUITE -->
+    <section class="program" id="suite">
+      <div class="p-head">
+        <h2>Wellness Specialist Suite</h2>
+        <span class="rate">Open · 2 part-time renters</span>
+      </div>
+      <div class="p-body">
+        <div class="grid2">
+          <div class="block details">
+            <h3>Terms at a glance</h3>
+            <dl>
+              <dt>Status</dt><dd>Open</dd>
+              <dt>Model</dt><dd>Moving from 1 full-time renter to 2 part-time renters</dd>
+              <dt>Agreement</dt><dd>Long-term booking agreement housed in Square</dd>
+              <dt>Screening</dt><dd>Checkr — Suite Owner Essential package</dd>
+            </dl>
+          </div>
+          <div class="block">
+            <h3>Links</h3>
+            <ul class="linklist">
+              <li><a class="pending" href="#">Square — long-term booking agreement <span class="arrow tag todo">Add link</span></a></li>
+              <li><a href="https://www.dashboard.checkr.com/home" target="_blank" rel="noopener">Checkr — background check dashboard <span class="arrow">→</span></a></li>
+              <li><a href="https://www.thesisterscouch.com/wellness-specialist" target="_blank" rel="noopener">Landing page — thesisterscouch.com/wellness-specialist <span class="arrow">→</span></a></li>
+              <li><a href="https://drive.google.com/drive/folders/1iX2hL8HQxYyah9EcyXIWgmK4YxbQYNlK?usp=sharing" target="_blank" rel="noopener">Google Drive folder <span class="arrow">→</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="note">Status: Suite is open for 2 part-time renters. This is a long-term booking arrangement, not a sublease. Update this note once renters are confirmed.</div>
+      </div>
+    </section>
+
+    <!-- EVENT SPACE -->
+    <section class="program" id="events">
+      <div class="p-head">
+        <h2>Event Space Rental</h2>
+        <span class="rate">$150/hr standard · $120/hr member</span>
+      </div>
+      <div class="p-body">
+        <div class="grid2">
+          <div class="block details">
+            <h3>Terms at a glance</h3>
+            <dl>
+              <dt>Standard rate</dt><dd>$150/hr</dd>
+              <dt>Member rate</dt><dd>$120/hr</dd>
+              <dt>Recurring</dt><dd>Wednesday or Thursday only, $100/hr, 2-hour daily minimum</dd>
+              <dt>Recurring deposit</dt><dd>$100</dd>
+              <dt>Standalone</dt><dd>1–2 bookings/month, $300–600/mo</dd>
+              <dt>Gov't/political</dt><dd>Approved case-by-case</dd>
+            </dl>
+            <div class="contacts-inline"><b>On-site walkthroughs:</b> Alandra</div>
+          </div>
+          <div class="block">
+            <h3>Links</h3>
+            <ul class="linklist">
+              <li><a href="https://docs.google.com/spreadsheets/d/1zQ1lRqCa_pLCJk-wIh37Pmxh0NaSAyEsBYtbozHsxIU/edit?usp=sharing" target="_blank" rel="noopener">Event Space Inquiry sheet <span class="arrow">→</span></a></li>
+              <li><a href="https://script.google.com/macros/s/AKfycbxKkhL-56YGlrILHucDkWxLEfiHupvfpIfIMWQIV-bTx6UULes-YO8ZSs6RntKbAgSR/exec" target="_blank" rel="noopener">Pre/Post Condition Checklist tool <span class="arrow">→</span></a></li>
+              <li><a class="pending" href="#">Booking agreement — e-signature platform (TBD, confirm with B) <span class="arrow tag todo">Add link</span></a></li>
+              <li><a href="https://www.thesisterscouch.com/event-space" target="_blank" rel="noopener">Landing page — thesisterscouch.com/event-space <span class="arrow">→</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="note"><b style="color:var(--forest-deep);">Process:</b> Receive inquiry → determine availability → update Inquiry sheet with status (triggers approval email) → send invoice and contract via Square.</div>
+      </div>
+    </section>
+
+    <!-- RETAIL VENDOR -->
+    <section class="program" id="retail">
+      <div class="p-head">
+        <h2>Retail Vendor Program</h2>
+        <span class="rate">75% vendor / 25% TSC · consignment</span>
+      </div>
+      <div class="p-body">
+        <div class="grid2">
+          <div class="block details">
+            <h3>Terms at a glance</h3>
+            <dl>
+              <dt>Split</dt><dd>75% vendor / 25% TSC, gross sales before tax</dd>
+              <dt>Admin fee</dt><dd>$150 one-time, non-refundable</dd>
+              <dt>Placement</dt><dd>3-month terms, mandatory rotation, 1 vendor/category</dd>
+              <dt>Payouts</dt><dd>Monthly on the 15th, via Square Bill Pay</dd>
+              <dt>Display live</dt><dd>July 1</dd>
+            </dl>
+            <div class="contacts-inline"><b>Active Q3 vendors:</b> Lotusbtr. Body Care (Tanissa Williams), Modestine® INC (Laura Shanley, remote), The Noble Brand (Sydney Noble)</div>
+          </div>
+          <div class="block">
+            <h3>Links</h3>
+            <ul class="linklist">
+              <li><a href="https://alandra.typeform.com/to/gwyAu3kz" target="_blank" rel="noopener">Vendor application (Typeform) <span class="arrow">→</span></a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/1h7J5leLCSERtXeZIusIO38etjvrMs4qg9xKjY4lRabQ/edit?usp=sharing" target="_blank" rel="noopener">Inventory sheet and tracker <span class="arrow">→</span></a></li>
+              <li><a href="https://script.google.com/macros/s/AKfycbzMEQHCpKYQJhG1Ez5rQWzX-gVPUBegbJKy9B-bjx3NCa3XjKohTQzhfvroH_f5o4AeYA/exec" target="_blank" rel="noopener">Restock request tool <span class="arrow">→</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="note">First payout: Aug 15.</div>
+      </div>
+    </section>
+
+    <!-- CO-WORKING -->
+    <section class="program" id="coworking">
+      <div class="p-head">
+        <h2>Drop-In Co-Working</h2>
+        <span class="rate">$25/session</span>
+      </div>
+      <div class="p-body">
+        <div class="grid2">
+          <div class="block details">
+            <h3>Terms at a glance</h3>
+            <dl>
+              <dt>Rate</dt><dd>$25/session</dd>
+              <dt>Current hours</dt><dd>Mon–Thu, 10 AM–3 PM (summer hours)</dd>
+              <dt>Starting Sept</dt><dd>Wednesdays only</dd>
+              <dt>Sign-up</dt><dd>Advance sign-up required, capped at 15 guests</dd>
+            </dl>
+          </div>
+          <div class="block">
+            <h3>Links</h3>
+            <ul class="linklist">
+              <li><a href="https://square.link/u/snx9GSY9" target="_blank" rel="noopener">Square payment link <span class="arrow">→</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUCH COLLECTIVE -->
+    <section class="program" id="collective">
+      <div class="p-head">
+        <h2>Couch Collective Membership</h2>
+        <span class="rate">$80/mo · 13 founding members</span>
+      </div>
+      <div class="p-body">
+        <div class="grid2">
+          <div class="block details">
+            <h3>Terms at a glance</h3>
+            <dl>
+              <dt>Rate</dt><dd>$80/member/month — 13 founding members</dd>
+              <dt>Term</dt><dd>12 months, August 2026–July 2027</dd>
+              <dt>Billing</dt><dd>Automatic withdrawal on the 1st (credit auth on file)</dd>
+              <dt>Kickoff</dt><dd>August 18</dd>
+              <dt>Guest pass</dt><dd>1/quarter, drop-in co-working only, non-transferable, non-cumulative</dd>
+              <dt>Standard rate</dt><dd>Not yet set (founding rate only for now)</dd>
+            </dl>
+            <div class="contacts-inline"><b>Includes:</b> Open co-working days, 2 member events, and discounts on space rentals</div>
+          </div>
+          <div class="block">
+            <h3>Links</h3>
+            <ul class="linklist">
+              <li><a class="pending" href="#">Founding Membership Agreement and Authorization form <span class="arrow tag todo">Add link</span></a></li>
+              <li><a class="pending" href="#">Couch Collective members Google Sheet <span class="arrow tag todo">Add link</span></a></li>
+              <li><span style="display:flex; align-items:center; gap:10px; font-size:14.5px; padding:9px 12px; border:1px solid var(--line); border-radius:8px;">Co-working discount code <span style="margin-left:auto; font-weight:600; color:var(--terracotta); letter-spacing:.02em;">Collective26!</span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TSC HOSTED EVENTS -->
+    <section class="program" id="hosted">
+      <div class="p-head">
+        <h2>TSC-Hosted Events</h2>
+        <span class="rate">Internal programming · 2–3/mo</span>
+      </div>
+      <div class="p-body">
+        <div class="grid2">
+          <div class="block details">
+            <h3>Terms at a glance</h3>
+            <dl>
+              <dt>Frequency</dt><dd>2–3 events/month</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GENERAL TOOLS -->
+    <section class="program" id="general">
+      <div class="p-head">
+        <h2>General Tools</h2>
+        <span class="rate">Shared across programs</span>
+      </div>
+      <div class="p-body">
+        <div class="grid2">
+          <div class="block">
+            <h3>Platforms</h3>
+            <ul class="linklist">
+              <li><a href="https://thesisterscouch.com" target="_blank" rel="noopener">Wix — thesisterscouch.com <span class="arrow">→</span></a></li>
+              <li><a href="https://drive.google.com/drive/folders/1TH-2L2bH_hnmI6cpeCJn4kph8sVuNLyz?usp=sharing" target="_blank" rel="noopener">Google Drive <span class="arrow">→</span></a></li>
+              <li><a href="https://www.peerspace.com/pages/listings/6a29f21fefcfa4596ac4bfe8?utm_source=copy_link&utm_campaign=listing_sharing" target="_blank" rel="noopener">Peerspace listing <span class="arrow">→</span></a></li>
+              <li><a href="https://www.dashboard.checkr.com/home" target="_blank" rel="noopener">Checkr dashboard <span class="arrow">→</span></a></li>
+            </ul>
+          </div>
+          <div class="block">
+            <h3>Who to contact</h3>
+            <ul class="linklist" style="gap:6px;">
+              <li style="border:none; padding:6px 4px;"><span class="dot" style="background:var(--terracotta); border-color:var(--terracotta); margin-right:2px;"></span>&nbsp;<b>Alandra Chuney Jackson</b> — Founder &amp; Executive Director, vision &amp; member-facing comms</li>
+              <li style="border:none; padding:6px 4px;"><span class="dot" style="background:var(--terracotta); border-color:var(--terracotta); margin-right:2px;"></span>&nbsp;<b>Brittani Gordon (B)</b> — Director of Operations, Consultant, systems &amp; back-end</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  The Sisters' Couch Wellness Hub · 19562 Grand River Ave, Detroit, MI 48223 · Internal reference — not linked from the public site
+</footer>
+
+</body>
+</html>
