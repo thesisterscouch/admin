@@ -154,7 +154,9 @@
   .details dt{ color:#7a726a; font-weight:500; }
   .details dd{ margin:0; }
 
-  .linklist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .linklist{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px 10px; }
+  @media (max-width:520px){ .linklist{ grid-template-columns:1fr; } }
+  @media (max-width:700px){ .qb-grid{ grid-template-columns:1fr !important; } }
   .linklist li a{
     display:flex; align-items:center; gap:10px; text-decoration:none;
     font-size:14.5px; color:var(--ink); padding:9px 12px; border:1px solid var(--line);
@@ -285,6 +287,7 @@
               <li><a href="https://docs.google.com/document/d/1Lblct_4gIW0C3w-wRyy-TK3r7RlroGAD/edit?usp=drive_link&ouid=110623388757513055132&rtpof=true&sd=true" target="_blank" rel="noopener">Rental Agreement template <span class="arrow">→</span></a></li>
               <li><a href="https://docs.google.com/document/d/1yOtVRp7MECb9Wu29wYkehHgKELgBC_tL/edit?usp=drive_link&ouid=110623388757513055132&rtpof=true&sd=true" target="_blank" rel="noopener">Event Rental Agreement FAQs <span class="arrow">→</span></a></li>
               <li><a href="https://drive.google.com/file/d/1zP_Ym2ZxwIO81PJAI_CAOUE-fEd2hKUx/view?usp=drive_link" target="_blank" rel="noopener">Event Approval Process Video <span class="arrow">→</span></a></li>
+              <li><a href="https://docs.google.com/document/d/1-0FXBamruW09P4DVhdGFhhoMFGlO28w3/edit?usp=sharing&ouid=110623388757513055132&rtpof=true&sd=true" target="_blank" rel="noopener">Event Communication <span class="arrow">→</span></a></li>
               <li><a href="https://script.google.com/macros/s/AKfycbxKkhL-56YGlrILHucDkWxLEfiHupvfpIfIMWQIV-bTx6UULes-YO8ZSs6RntKbAgSR/exec" target="_blank" rel="noopener">Tracker (Condition Checklist tool) <span class="arrow">→</span></a></li>
             </ul>
           </div>
@@ -445,7 +448,7 @@
         <span class="rate">$80/mo · 13 founding members</span>
       </div>
       <div class="p-body">
-        <p style="font-size:14.5px; color:#4b443d; margin:0 0 22px; padding-bottom:20px; border-bottom:1px dashed var(--line);">A private membership for Black women seeking a consistent, safe, and intentional space to rest, connect, and prioritize their wellness. As a Founding Member, you'll have the option to be featured on The Sisters' Couch website as part of our Founding Collective — a permanent acknowledgment of the women who helped create this space.</p>
+        <p style="font-size:14.5px; color:#4b443d; margin:0 0 22px; padding-bottom:20px; border-bottom:1px dashed var(--line);">This is a founding membership agreement for The Sisters' Couch Wellness Hub's "Couch Collective," a healing-centered wellness community for Black women in Detroit, running August 2026–July 2027 at a locked-in rate of $80/month billed automatically via Square. Members get drop-in co-working access (Mon–Thu, 10am–3pm), one quarterly guest pass, priority/member pricing on events, and exclusive Couch Collective programming, all contingent on staying in good standing. Cancellation requires 30 days' written notice (no refunds for the current billing period), and there are strict confidentiality and community-standards clauses — violations can lead to immediate membership revocation without refund. It also includes a media consent section (opt in/out for photo/video use) and standard governing-law/terms-update provisions.</p>
         <div class="grid2">
           <div class="block details">
             <h3>Terms at a glance</h3>
@@ -459,25 +462,38 @@
             <div class="contacts-inline"><b>Includes:</b> Open co-working days, 2 member events, and discounts on space rentals</div>
           </div>
           <div class="block">
-            <h3>Quarterly Benefits (via portal)</h3>
-            <ul class="linklist" style="gap:6px;">
-              <li style="border:none; padding:6px 4px;"><b>Guest Day</b> — 1/quarter. Member enters guest info; confirmation email sent to guest, CC'd to member and TSC.</li>
-              <li style="border:none; padding:6px 4px;"><b>Complimentary Suite Hour</b> — 1/quarter. Member picks an open time; books straight onto the calendar for us and the member.</li>
-              <li style="border:none; padding:6px 4px;"><b>Co-Working Days</b> — unlimited. Links out to Square with the Collective discount code.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="note" style="border-top:none; padding-top:0; margin-top:0;">
-          <h3 style="font-family:'Jost',sans-serif; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--forest-deep); font-weight:600; margin-bottom:10px; opacity:0.75;">Links</h3>
-          <ul class="linklist">
+            <h3>Links</h3>
+            <ul class="linklist">
               <li><a href="https://script.google.com/macros/s/AKfycbzTzewyHVV7Bx9GFgEvkXuuVQA1JZsMf_8_p__c4U8rlAGQxMdEZAzJm844Qw5Mx0QiwA/exec" target="_blank" rel="noopener">Founding Member Benefits Portal <span class="arrow">→</span></a></li>
               <li><a href="https://alandra.typeform.com/to/VL9Axn38" target="_blank" rel="noopener">Application (Typeform) <span class="arrow">→</span></a></li>
               <li><a href="https://docs.google.com/spreadsheets/d/1qfuwh4zDJZJG543G_ckZMlLU9UK9ADhmDkuDm3qAZ30/edit?usp=sharing" target="_blank" rel="noopener">Tracking sheet <span class="arrow">→</span></a></li>
-              <li><a href="https://docs.google.com/document/d/1Tr4QgUx8K5EYsXf1FmugGqRoanraXtyB/edit?usp=sharing&ouid=110623388757513055132&rtpof=true&sd=true" target="_blank" rel="noopener">Agreement <span class="arrow">→</span></a></li>
+              <li><a href="https://docs.google.com/document/d/1jZY5ewrFGrQu56oR6VaYCREHgtTDt2qX/edit?usp=sharing&ouid=110623388757513055132&rtpof=true&sd=true" target="_blank" rel="noopener">Agreement <span class="arrow">→</span></a></li>
               <li><span style="display:flex; align-items:center; gap:10px; font-size:14.5px; padding:9px 12px; border:1px solid var(--line); border-radius:8px;">Co-working discount code <span style="margin-left:auto; font-weight:600; color:var(--terracotta); letter-spacing:.02em;">Collective26!</span></span></li>
             </ul>
           </div>
         </div>
+        <div style="margin-top:24px;">
+          <h3 style="font-family:'Jost',sans-serif; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--forest-deep); font-weight:600; margin-bottom:12px; opacity:0.75;">Quarterly Benefits (via portal)</h3>
+          <div class="qb-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
+            <div style="background:var(--sage); border-radius:12px; padding:14px 16px;">
+              <div style="font-family:'Cormorant Garamond', serif; font-size:1.15rem; font-style:italic; color:var(--forest-deep); margin-bottom:6px;">Guest Day</div>
+              <div style="font-size:13px; color:#4b443d; line-height:1.5;">1/quarter. Member enters guest info; confirmation email sent to guest, CC'd to member and TSC.</div>
+            </div>
+            <div style="background:var(--sage); border-radius:12px; padding:14px 16px;">
+              <div style="font-family:'Cormorant Garamond', serif; font-size:1.15rem; font-style:italic; color:var(--forest-deep); margin-bottom:6px;">Complimentary Suite Hour</div>
+              <div style="font-size:13px; color:#4b443d; line-height:1.5;">1/quarter. Member picks an open time; books straight onto the calendar for us and the member.</div>
+            </div>
+            <div style="background:var(--sage); border-radius:12px; padding:14px 16px;">
+              <div style="font-family:'Cormorant Garamond', serif; font-size:1.15rem; font-style:italic; color:var(--forest-deep); margin-bottom:6px;">Co-Working Days</div>
+              <div style="font-size:13px; color:#4b443d; line-height:1.5;">Unlimited. Links out to Square with the Collective discount code.</div>
+            </div>
+          </div>
+        </div>
+        <div class="note" style="margin-top:24px;">
+          <h3 style="font-family:'Jost',sans-serif; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--forest-deep); font-weight:600; margin-bottom:10px; opacity:0.75;">Founding Members</h3>
+          <p style="font-size:14px; color:#4b443d; line-height:1.6; margin:0;">Andrea Buckley, Brandy Murphy, Carina L. Jackson, Carol A. Davis, Darlene Hawkins, Dr. Rita Fields, Erika Yvette Millender, Jasmine Tucker, Jolisa Brooks, Lanisha Felder, Monica Marie Johnson, Shelly Thompson, Vanita Michelle Sanders</p>
+        </div>
+      </div>
     </section>
 
     <!-- TSC HOSTED EVENTS -->
